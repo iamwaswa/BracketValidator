@@ -1,4 +1,4 @@
-package bracketvalidator;
+package firstimplementation;
 
 import java.util.Stack;
 
@@ -78,31 +78,49 @@ public class FirstImplementation {
 
 	public static void main (String[] args){
 
-		String bracketsOne = "{ [ ] ( ) }";
+		String bracketsOne = "{ Waswa [ is ] seriously ( dope ) dude }";
 		String bracketsTwo = "{ [ ( ] ) }";
 		String bracketsThree = "{ [ }";
+		String bracketsFour = "";
+		String bracketsFive = " ";
 
 		if(isValidBracketString(bracketsOne)){
-			System.out.println("Braces in " + bracketsOne +
+			System.out.println("Braces in " + "\"" + bracketsOne + "\"" +
 							  " are correctly ordered.");
 		} else {
-			System.out.println("Braces in " + bracketsOne +
+			System.out.println("Braces in " + "\"" + bracketsOne + "\"" +
 							  " are incorrectly ordered.");
 		}
 
 		if(isValidBracketString(bracketsTwo)){
-			System.out.println("Braces in " + bracketsTwo +
+			System.out.println("Braces in " + "\"" + bracketsTwo + "\"" +
 							  " are correctly ordered.");
 		} else {
-			System.out.println("Braces in " + bracketsTwo +
+			System.out.println("Braces in " + "\"" + bracketsTwo + "\"" +
 							  " are incorrectly ordered.");
 		}
 
 		if(isValidBracketString(bracketsThree)){
-			System.out.println("Braces in " + bracketsThree +
+			System.out.println("Braces in " + "\"" + bracketsThree + "\"" +
 							  " are correctly ordered.");
 		} else {
-			System.out.println("Braces in " + bracketsThree +
+			System.out.println("Braces in " + "\"" + bracketsThree + "\"" +
+							  " are incorrectly ordered.");
+		}
+
+		if(isValidBracketString(bracketsFour)){
+			System.out.println("Braces in " + "\"" + bracketsFour + "\"" +
+							  " are correctly ordered.");
+		} else {
+			System.out.println("Braces in " + "\"" + bracketsFour + "\"" +
+							  " are incorrectly ordered.");
+		}
+
+		if(isValidBracketString(bracketsFive)){
+			System.out.println("Braces in " + "\"" + bracketsFive + "\"" +
+							  " are correctly ordered.");
+		} else {
+			System.out.println("Braces in " + "\"" + bracketsFive + "\"" +
 							  " are incorrectly ordered.");
 		}
 
@@ -110,6 +128,10 @@ public class FirstImplementation {
 
 
 	private static boolean isValidBracketString (String bracketString){
+
+		if (bracketString.isEmpty()){
+			return false;
+		}
 
 		for (int i = 0; i < bracketString.length(); i++){
 
